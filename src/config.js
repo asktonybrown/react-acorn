@@ -44,8 +44,8 @@ export const _DEFAULT_SETTINGS = {
 };
 
 export const DEFAULT_USER = {
-  id: 1,
-  name: 'Lisa Jackson',
+  id: 19701014,
+  name: 'Lisa Ross',
   thumb: '/img/profile/profile-9.webp',
   role: USER_ROLE.Admin,
   email: 'lisajackson@gmail.com',
