@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useMemo } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// import redux for auth guard
+import { useSelector } from 'react-redux';
+
+// import layout
+import Layout from 'layout/Layout';
+
+// import routing modules
+import RouteIdentifier from 'routing/components/RouteIdentifier';
+import { getRoutes } from 'routing/helper';
+import routesAndMenuItems from 'routes.js';
+import Loading from 'components/loading/Loading';
+
+const App = () => {
+  const { currentUser, isLogin } = useSelector((state) => state.auth);
+
+  const routes = useMemo(() => getRoutes({ data: routesAndMenuItems, isLogin, userRole: currentUser.role }), [isLogin, currentUser]);
+  if (routes) {
+    return (
+      <Layout>
+        <RouteIdentifier routes={routes} fallback={<Loading />} />
+      </Layout>
+    );
+  }
+  return <></>;
+};
 
 export default App;
