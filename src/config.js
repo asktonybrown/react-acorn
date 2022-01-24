@@ -7,8 +7,8 @@ export const USE_MULTI_LANGUAGE = true;
 
 // For detailed information: https://github.com/nfl/react-helmet#reference-guide
 export const REACT_HELMET_PROPS = {
-  defaultTitle: 'Acorn Admin Template',
-  titleTemplate: '%s | Acorn Admin Template',
+  defaultTitle: 'Member Admin Portal',
+  titleTemplate: '%s | Product Creation Module',
 };
 
 export const DEFAULT_PATHS = {
@@ -24,6 +24,16 @@ export const DEFAULT_PATHS = {
 };
 
 export const DEFAULT_SETTINGS = {
+  MENU_PLACEMENT: MENU_PLACEMENT.Vertical,
+  MENU_BEHAVIOUR: MENU_BEHAVIOUR.Pinned,
+  LAYOUT: LAYOUT.Fluid,
+  RADIUS: RADIUS.Standard,
+  COLOR: THEME_COLOR.DarkBlue,
+  NAV_COLOR: NAV_COLOR.Default,
+  USE_SIDEBAR: true,
+};
+
+export const _DEFAULT_SETTINGS = {
   MENU_PLACEMENT: MENU_PLACEMENT.Horizontal,
   MENU_BEHAVIOUR: MENU_BEHAVIOUR.Pinned,
   LAYOUT: LAYOUT.Fluid,
